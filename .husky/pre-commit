@@ -1,1 +1,1 @@
-npx lintstaged
+npx lint-staged
