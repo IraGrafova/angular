@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import { ApplicationConfig } from '../../shared/application-config/application-config.interface';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -12,13 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+  readonly config = input<ApplicationConfig>();
+
   readonly imgSrc =
     'https://avatars.mds.yandex.net/i?id=19847df007428c4ffe90cc91e1d5c71431c145e9-11042380-images-thumbs&n=13';
-  onClick() {
-    console.log('click');
-  }
 
-  onKeyDown(event: Event) {
-    console.log(event);
-  }
+  readonly menuClick = output<Event>();
 }
