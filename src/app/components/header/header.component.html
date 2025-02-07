@@ -1,13 +1,11 @@
 <mat-toolbar>
+  <button mat-icon-button class="example-icon" (click)="menuClick.emit($event)">
+    <mat-icon>menu</mat-icon>
+  </button>
   <img class="logo" alt="logo" [src]="config()?.shopIconSrc" [style.width.px]="60" />
   <span class="header">{{ config()?.title }}</span>
   <span class="example-spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon"
-    (click)="menuClick.emit($event)"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button class="example-icon" (click)="buyClick.emit($event)">
+    <mat-icon fontIcon="shopping_bag"></mat-icon>
   </button>
 </mat-toolbar>
